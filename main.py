@@ -1,4 +1,3 @@
-from numpy import *
 
 
 
@@ -32,6 +31,33 @@ def calculate_LU(matrix: list) -> tuple:
 
 
 
+def calculate_y(L: list, b: list) -> list:
+
+    n_L = len(L)
+
+    for i in range(n_L):
+        L[i].append(b[i])
+
+    current_pivot = 0
+    for i in range(n_L):
+        for j in range(i+1, n_L):
+
+            operator = -1 * (L[j][current_pivot]/L[i][current_pivot])
+            L[j][current_pivot] = -operator
+
+            for x in range(current_pivot, n_L+1):
+                L[j][x] += operator * L[i][x]
+
+        current_pivot += 1      
+
+
+    y = []
+    for i in range(n_L):
+        y.append(L[i].pop())
+
+
+    return y
+
 
 
 
@@ -51,5 +77,6 @@ if __name__ == "__main__":
         A.append([int(x) for x in input().split(' ')])
 
 
-    
+    # calculate L and U decomposition for matrix A
+    L, U = calculate_LU(A)
 
