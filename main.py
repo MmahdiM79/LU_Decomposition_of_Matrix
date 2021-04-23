@@ -38,25 +38,25 @@ def calculate_y(L: list, b: list) -> list:
     for i in range(n_L):
         L[i].append(b[i])
 
+    y = b
+
     current_pivot = 0
     for i in range(n_L):
         for j in range(i+1, n_L):
 
             operator = -1 * (L[j][current_pivot]/L[i][current_pivot])
-            L[j][current_pivot] = -operator
 
-            for x in range(current_pivot, n_L+1):
-                L[j][x] += operator * L[i][x]
+
+            y[j] += operator * y[i]
 
         current_pivot += 1      
 
 
-    y = []
-    for i in range(n_L):
-        y.append(L[i].pop())
-
 
     return y
+
+
+
 
 
 
@@ -80,3 +80,4 @@ if __name__ == "__main__":
     # calculate L and U decomposition for matrix A
     L, U = calculate_LU(A)
 
+    calculate_x(U, calculate_y(L, [1, 1, 1]))
