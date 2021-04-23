@@ -99,7 +99,7 @@ if __name__ == "__main__":
     L, U = calculate_LU(A)    
 
 
-for _ in range(number_of_b):
+    for _ in range(number_of_b):
 
         b = [int(x) for x in input().split(' ')]
 
