@@ -20,5 +20,10 @@ if __name__ == "__main__":
 
 
 
-    
+    # read matrix A
+    A = []
+    for _ in range(n_matrix):
+        A.append([int(x) for x in input().split(' ')])
 
+
+    
