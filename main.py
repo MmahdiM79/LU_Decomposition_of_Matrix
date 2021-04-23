@@ -25,10 +25,8 @@ def calculate_LU(matrix: list) -> tuple:
         current_pivot += 1                
 
 
-    print(U)
-    print('\n', L)
 
-    return ()
+    return L, U
 
 
 
