@@ -3,4 +3,4 @@
 
 this simple python code calculate LU decomposition of a square Matrix
 
-see the '''python calculate_LU ''' function
+see the ```python calculate_LU ``` function
