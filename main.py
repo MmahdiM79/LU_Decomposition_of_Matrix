@@ -45,11 +45,28 @@ def calculate_y(L: list, b: list) -> list:
         current_pivot += 1      
 
 
-
     return b
 
 
 
+
+
+def calculate_x(U: list, y: list) -> list:
+
+    n_U = len(U)
+
+
+    current_pivot = n_U-1
+    for i in range(n_U-1, -1, -1):
+
+        for j in range(i-1, -1, -1):
+            operator = -1 * (U[j][current_pivot]/U[i][current_pivot])
+            y[j] += operator * y[i]
+
+        current_pivot -= 1
+
+
+    return y
 
 
 
@@ -73,6 +90,4 @@ if __name__ == "__main__":
 
 
     # calculate L and U decomposition for matrix A
-    L, U = calculate_LU(A)
-
-    calculate_y(L, [1, 1, 1])
+    L, U = calculate_LU(A)    
