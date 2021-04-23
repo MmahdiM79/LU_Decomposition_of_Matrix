@@ -5,6 +5,8 @@ this simple python code calculate LU decomposition of a square Matrix
 
 see the 
 ```Python 
-    calculate_LU 
+    def calculate_LU(matrix: list) -> tuple
 ``` 
 function
+
+
