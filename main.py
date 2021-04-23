@@ -35,20 +35,18 @@ def calculate_y(L: list, b: list) -> list:
 
     n_L = len(L)
 
-    y = b
-
     current_pivot = 0
     for i in range(n_L):
 
         for j in range(i+1, n_L):
             operator = -1 * (L[j][current_pivot]/L[i][current_pivot])
-            y[j] += operator * y[i]
+            b[j] += operator * b[i]
 
         current_pivot += 1      
 
 
 
-    return y
+    return b
 
 
 
