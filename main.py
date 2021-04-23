@@ -66,6 +66,12 @@ def calculate_x(U: list, y: list) -> list:
         current_pivot -= 1
 
 
+    current_pivot = 0
+    for i in range(n_U):
+        y[i] /= U[i][current_pivot]
+        current_pivot += 1
+
+
     return y
 
 
